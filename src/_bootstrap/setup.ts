@@ -6,7 +6,6 @@ export function setupSwagger(app: INestApplication) {
     .setTitle('Books Inventory API')
     .setDescription('The WebApp API')
     .setVersion('1.0.0')
-    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/web/api/v1', app, document);
