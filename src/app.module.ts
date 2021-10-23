@@ -1,7 +1,5 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { APP_GUARD } from '@nestjs/core';
-import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { validate } from './_bootstrap/env';
 import { BookModule } from './book/book.module';
 import { AuthorModule } from './author/author.module';
