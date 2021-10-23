@@ -3,9 +3,8 @@ import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class BookService {
-  defaultPerPage: number;
-
   constructor(private prisma: PrismaService) {}
+
   async findOne(id: number) {
     return this.prisma.book.findUnique({
       where: {
@@ -14,7 +13,15 @@ export class BookService {
     });
   }
 
-  async createMany(data) {
-    return this.prisma.book.createMany({ data, skipDuplicates: true });
+  async findBookIdsByYears(years: number[]) {
+    return this.prisma.book.findMany({
+      select: { id: true },
+      distinct: ['id'],
+      where: {
+        year: {
+          in: years,
+        },
+      },
+    });
   }
 }

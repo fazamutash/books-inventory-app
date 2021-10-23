@@ -4,6 +4,7 @@ import fs from 'fs';
 const prisma = new PrismaService();
 
 async function main() {
+  console.log(new Date());
   const rawAuthorsData = fs.readFileSync('../authors.json');
   const { authors } = JSON.parse(rawAuthorsData.toString());
 
@@ -31,6 +32,7 @@ async function main() {
     data: authorsOnBooks,
     skipDuplicates: true,
   });
+  console.log(new Date());
 }
 
 main()
