@@ -7,7 +7,7 @@ import {
   UnprocessableEntityException,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { AuthorOnBookService } from 'src/author-on-book/author-on-book.service';
+import { AuthorOnBookService } from '../author-on-book/author-on-book.service';
 import { BookService } from './book.service';
 import { GetBooksByYearsDto } from './dto/get-book-by-years.dto';
 import { GetBookDto } from './dto/get-book.dto';
