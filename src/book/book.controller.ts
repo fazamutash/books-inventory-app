@@ -23,8 +23,7 @@ export class BookController {
 
   @Get(':id')
   async getBookById(@Request() request: any, @Param() params: GetBookDto) {
-    const book = await this.bookService.findOne(Number(params.id));
-    return book;
+    return this.bookService.findOne(Number(params.id));
   }
 
   @Get('/authors/:ids')
@@ -33,10 +32,7 @@ export class BookController {
     @Param() param: GetBooksByAuthorsDto,
   ) {
     const idList = param.ids.split(',').map((id) => Number(id));
-    const bookIds = await this.authorOnBookService.findBookIdsByAuthorIds(
-      idList,
-    );
-    return bookIds;
+    return this.authorOnBookService.findBookIdsByAuthorIds(idList);
   }
 
   @Get('/years/:years')
@@ -45,8 +41,7 @@ export class BookController {
     @Param() param: GetBooksByYearsDto,
   ) {
     const yearList = param.years.split(',').map((year) => Number(year));
-    const bookIds = await this.bookService.findBookIdsByYears(yearList);
-    return bookIds;
+    return this.bookService.findBookIdsByYears(yearList);
   }
 
   @Get('/pages')
@@ -57,7 +52,6 @@ export class BookController {
     if (!query.max && !query.min) {
       throw new UnprocessableEntityException(`Couldn't find min or max`);
     }
-    console.log(query);
-    return [];
+    return this.bookService.findBookIdsByPages(query);
   }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { GetBooksByPagesDto } from './dto/get-books-by-pages.dto';
 
 @Injectable()
 export class BookService {
@@ -21,6 +22,20 @@ export class BookService {
         year: {
           in: years,
         },
+      },
+    });
+  }
+
+  async findBookIdsByPages(query: GetBooksByPagesDto) {
+    const pages = {
+      ...(query.min && { gte: Number(query.min) }),
+      ...(query.max && { lte: Number(query.max) }),
+    };
+    return this.prisma.book.findMany({
+      select: { id: true },
+      distinct: ['id'],
+      where: {
+        pages,
       },
     });
   }
