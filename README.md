@@ -32,9 +32,6 @@ $ npm run prisma:seed
 ## Test
 
 ```bash
-# unit tests
-$ npm run test
-
 # e2e tests
-$ npm run test:e2e
+$ npm run test
 ```

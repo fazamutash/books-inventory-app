@@ -1,5 +1,5 @@
 import { plainToClass } from 'class-transformer';
-import { IsString, IsNumber, validateSync, IsEmail } from 'class-validator';
+import { IsString, IsNumber, validateSync } from 'class-validator';
 
 export enum Environment {
   Staging = 'staging',
