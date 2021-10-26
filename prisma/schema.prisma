@@ -12,45 +12,45 @@ datasource db {
 
 model Book {
   id              Int        @id
-  original_title  String?
-  language_code   String?
-  category        String?
-  plot            String?
-  content_name String?
-  year Int?
-  copyright String?
-  average_rating Float?
-  similar_books String[]
-  gutenberg Json?
-  language String?
-  release_date String?
-  summary String?
+  original_title    String?
+  language_code     String?
+  category          String?
+  plot              String?
+  content_name      String?
+  year              Int?
+  copyright         String?
+  average_rating    Float?
+  similar_books     String[]
+  gutenberg         Json?
+  language          String?
+  release_date      String?
+  summary           String?
   content_available Boolean?
-  format String?
-  isbn String?
-  author_name String?
-  images String[]
-  title String?
-  rating_count Int?
-  description String?
-  authors Int[]
-  isbn13 String?
-  author Int?
-  content_cleaned Boolean?
-  n_authors Int?
-  cover_art String?
-  images_urls String[]
-  genres String[]
-  wikipedia Json?
-  goodreads Json?
-  loc_class String?
-  pages Int?
-  countries Int[]
-  cover String?
-  classes String[]
-  cover_art_url String?
-  contents Json[]
-  authorsOnBooks   AuthorsOnBooks[]
+  format            String?
+  isbn              String?
+  author_name       String?
+  images            String[]
+  title             String?
+  rating_count      Int?
+  description       String?
+  authors           Int[]
+  isbn13            String?
+  author            Int?
+  content_cleaned   Boolean?
+  n_authors         Int?
+  cover_art         String?
+  images_urls       String[]
+  genres            String[]
+  wikipedia         Json?
+  goodreads         Json?
+  loc_class         String?
+  pages             Int?
+  countries         Int[]
+  cover             String?
+  classes           String[]
+  cover_art_url     String?
+  contents          Json[]
+  authorsOnBooks    AuthorsOnBooks[]
 }
 
 model Author {
@@ -58,14 +58,14 @@ model Author {
   name            String?
   bio             String?
   gender          String?
-  countries Int[]
-  wikipedia Json?
-  summary String?
-  books Int[]
-  died String?
-  n_books Int?
-  born String?
-  authorsOnBooks   AuthorsOnBooks[]
+  countries       Int[]
+  wikipedia       Json?
+  summary         String?
+  books           Int[]
+  died            String?
+  n_books         Int?
+  born            String?
+  authorsOnBooks  AuthorsOnBooks[]
 }
 
 model AuthorsOnBooks {
